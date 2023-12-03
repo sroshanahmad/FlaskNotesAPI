@@ -9,6 +9,6 @@ def handle_preflight():
         res.headers['X-Content-Type-Options'] = '*'
         return res
 
-if __name__ == '__main__': #gave this line so that anything inside it,executes only if we run the main.py and not when we import this file
-    app.run() # with debug=TRUE, everytime we make changes to our code, it is going to rerun the flask server, dont have to manually rerun
-
+if __name__ == '__main__': 
+    app.run(host='0.0.0.0', port=5000) 
+    # app.run() 
