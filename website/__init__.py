@@ -1,12 +1,10 @@
 from flask import Flask
-
 from os import path
 from flask_cors import CORS
-from flask_rebar import Rebar
-from .templates.views import rebar
-from .templates.models import db,Note
+from flask_sqlalchemy import SQLAlchemy
 
 
+db = SQLAlchemy()
 DB_NAME = 'database.db'
 
 def create_app():
@@ -17,11 +15,14 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{DB_NAME}"
     
     db.init_app(app)
+    from .templates.models import Note
     create_db(app)
 
+
+    from .templates.views import rebar
     rebar.init_app(app)
 
-    CORS(app, resources={r"/notes/*": {"origins": "http://localhost:3000"}})
+    CORS(app, resources={r"/*": {"origins": "*"}})
 
     return app
 

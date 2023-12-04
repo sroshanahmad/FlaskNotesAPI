@@ -1,7 +1,6 @@
-from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.sql import func
+from website import db
 
-db = SQLAlchemy()
 
 class Note(db.Model):
     id = db.Column(db.Integer, primary_key=True)
