@@ -18,7 +18,6 @@ class PostNoteRequestSchema(RequestSchema):
 class PutNoteRequestSchema(RequestSchema):
     id = fields.Int(requied=True)
     data = fields.String(requied=True, validate=validate.Length(min=3))
-    date = fields.DateTime(requied=True)
 
 class DeleteNoteRequestSchema(RequestSchema):
     id = fields.Int(requied=True)
