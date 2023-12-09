@@ -107,8 +107,8 @@ sudo virt-install \
     ```
 - Configuration setting for Nginx:
 
-    **Note**: If you are using react, you will have to run:
-    `npm run build` and provide the index.html inside the build folder.
+    **Note**: If you are using react, you have to run:
+    `npm run build`  to get production build and provide index.html in the build folder.
 
     ```
     server {
