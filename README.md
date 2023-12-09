@@ -73,7 +73,7 @@ sudo virt-install \
 **Check it on the ip address it is up.!!**
 
 - **Note**
-**Access and permission issues**:if 404 errors occurs first time when you try access site, it might because nginx doesnt have read access to the files and to directories to where your index.html is. You have to provide access to all parent directories:
+**Access and permission issues**:if 404 errors occurs first time when you try access site, it might be because nginx doesn't has read & execute access to files and directories to where your index.html is. You have to provide access to all parent directories:
 `sudo chmod -R 755 <directories>` 
 
     Then restart nginx for changes to take place.
