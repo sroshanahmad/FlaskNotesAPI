@@ -3,6 +3,8 @@
 ## Overview
 FlaskNotesAPI is a Flask application designed for managing notes through a RESTful API. It integrates with a ReactJS-based web application for the frontend. The backend is deployed using Gunicorn as a WSGI server on an Ubuntu VM, with QEMU-KVM for virtualization. Nginx serves as the reverse proxy.
 
+The API is consumed by a ReactJs-based web application. To view the web app, visit:
+
 React Web App: [ReactNotesViewer](https://github.com/sroshanahmad/ReactNotesViewer)
 
 
