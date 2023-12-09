@@ -12,8 +12,8 @@ React Web App: [ReactNotesViewer](https://github.com/sroshanahmad/ReactNotesView
 
 
 ### Prerequisites
-- Virtualization support check: Run `lscpu | grep Virtualization`. No output indicates no support.
-- Verify Virtualization enablement: Run `kvm-ok`.
+- **Virtualization support check**: Run `lscpu | grep Virtualization`. No output indicates no support.
+- **Verify Virtualization enablement**: Run `kvm-ok`.
 
 ### Virtualisation and VM Setup
 
@@ -105,7 +105,7 @@ sudo virt-install \
     [Install]
     WantedBy=multi-user.target
     ```
-- Setting for Nginx:
+- Configuration setting for Nginx:
 
     **Note**: If you are using react, you will have to run:
     `npm run build` and provide the index.html inside the build folder.
