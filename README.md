@@ -50,9 +50,9 @@ sudo virt-install \
 ### Service File Creation
 1. **Create a service file**: `sudo touch /etc/systemd/system/<file_name>.service`.
 2. **Service file content**: Use a non-root user for the service. Populate the file with necessary details (see example below).
-3. **Enable and Manage Service**: Enable (`sudo systemctl enable <file_name>.service`), start (`sudo systemctl start <file_name>.service`), check status (`sudo systemctl status <file_name>.service `), and reload (`sudo systemctl daemon-reload`) as needed.
+3. **Enable and Manage Service**: To enable this service when system boots up (`sudo systemctl enable <file_name>.service`), start service (`sudo systemctl start <file_name>.service`), check status (`sudo systemctl status <file_name>.service `), and reload configuration (`sudo systemctl reload-or-restart <filename>.service`) as needed.
 
-- Any changes to the systemd service file require you to reload the systemd manager configuration. This can be done with the command: `sudo systemctl daemon-reload`
+- Any changes to the systemd service file require you to reload the systemd manager configuration. This can be done with the command: `sudo systemctl reload-or-restart <file_name>.service`
 - Followed by restarting the service: `sudo systemctl restart gunicorn.service`
 
 
@@ -62,12 +62,12 @@ sudo virt-install \
 ### Installation and Configuration
 1. **Install Nginx**: `sudo apt install nginx`.
 2. **Edit Nginx Configuration**: Modify `/etc/nginx/sites-available/default`. Set up reverse proxy for Flask and static file handling for React (see example below).
-3. **Enable Nginx Site**: If instead using/creating a different config file, link it to the sites-enabled directory by `sudo ln -s /etc/nginx/sites-available/<filename> /etc/nginx/sites-enabled/`
+3. **Enable Nginx Site**: If instead using/creating a different config file, link it to the sites-enabled directory by `sudo ln -s /etc/nginx/sites-available/<filename> /etc/nginx/sites-enabled/`. To start `sudo systemctl start nginx`
 ### Maintenance
 - Check syntax: `sudo nginx -t`.
 - Reload Nginx: `sudo systemctl reload nginx`.
 - Enable Nginx on boot: `sudo systemctl enable nginx`.
--  Adjust permissions 
+
 
 
 **Check it on the ip address it is up.!!**
